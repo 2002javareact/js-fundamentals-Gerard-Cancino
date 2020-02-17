@@ -38,8 +38,7 @@ const createSquare = (height,character) => {
     firstLine+=character;
   }
   for(let i=0;i<height;i++){
-    stringShape+=firstLine;
-    if(i!==height-1) stringShape+='\n' 
+    stringShape+=firstLine+'\n';
   }
   return stringShape.substring(0,stringShape.lastIndexOf(`\n`));
 };
@@ -85,6 +84,6 @@ const createDiamond = (height,character) => {
   }
   return result.substring(0,result.lastIndexOf(`\n`));
 };
-console.log(printShape('Square',5,'*'));
-console.log(printShape('Triangle',3,'X'));
-console.log(printShape('Diamond',7,'$'));
+console.log(printShape('Square',1,'*'));
+console.log(printShape('Triangle',1,'X'));
+console.log(printShape('Diamond',1,'$'));
