@@ -35,36 +35,52 @@ const createSquare = (height,character) => {
   }
   for(let i=0;i<height;i++){
     stringShape+=firstLine;
-    if(i!==height-1) stringShape+='/n' 
+    if(i!==height-1) stringShape+='\n' 
   }
-  return stringShape;
+  return stringShape.substring(0,stringShape.lastIndexOf(`\n`));
 };
 const createTriangle = (height,character) => {
   let stringShape = '';
   for(let i=0;i<height;i++){
     for(let j=0;j<i+1;j++){
       stringShape+=character;
-      if(j===i) stringShape+='/n';
+      if(j===i) stringShape+='\n';
     }
   }
-  return stringShape;
+  return stringShape.substring(0,stringShape.lastIndexOf(`\n`));
 };
 const createDiamond = (height,character) => {
   /*
     while + for -> while + for => O(N/2*N/2)+O(M/2*M/2)
     for2 => O(N2)
   */
-  const stringShape = [height][height];
-  const middle = Math.floor(height/2);
-  console.log(stringShape)
-  let i = 0;
-  while(i<middle){
-    for(let j=0;j<i;j++){
-      height[i][middle-j]=character;
+  const map = [];
+  let middle = Math.floor(height/2);
+  for(let i=0;i<height/2;i++){
+    let x = '';
+    let k = 0;
+    while(k<middle-i){
+      x+=' ';
+      k++;
     }
-    i++
+    while(k<middle+i+1){
+      x+=character;
+      k++;
+    }
+    map.push(x+`\n`);
   }
-  console.log(stringShape);
+  for(let i=middle-1;i<0;i++){
+    map.push(map[i]);
+  }
+  let result = '';
+  for(let i=0;i<middle;i++){
+    result+=map[i];
+  }
+  for(let i=middle;i>=0;i--){
+    result+=map[i];
+  }
+  return result.substring(0,result.lastIndexOf(`\n`));
 };
-
-createDiamond(3,'$')
+console.log(printShape('Square',5,'*'))
+console.log(printShape('Triangle',3,'X'))
+console.log(printShape('Diamond',7,'$'))
