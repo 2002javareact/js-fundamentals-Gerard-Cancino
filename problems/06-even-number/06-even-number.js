@@ -20,4 +20,7 @@ function isEven(someNum) {
   let binaryNumber = someNum.toString(2);
   return binaryNumber[binaryNumber.length-1]==='0'?(true):(false);
 }
-console.log(isEven(11))
+const test1 = 10;
+const test2 = 11;
+console.log(`${test1} is ${isEven(test1)}`);
+console.log(`${test2} is ${isEven(test2)}`);

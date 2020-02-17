@@ -26,7 +26,7 @@ function objectProperties(someObj) {
 }
 
 function isAnObject(someObj){
-  if(typeof someObj === 'object') return true;
+  if(typeof(someObj) === 'object') return true;
   return false;
 }
 

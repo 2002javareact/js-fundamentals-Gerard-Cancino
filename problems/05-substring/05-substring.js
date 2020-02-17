@@ -25,6 +25,8 @@ function substring(someStr,startIndex,endIndex){
   return determineSubstring(someStr,startIndex,endIndex);
 }
 
-const someStr = 5;
+const someStr = 'hello';
 console.log(substring(someStr,0,3));
+const someStr2 = 5;
+console.log(substring(someStr2,0,3));
 

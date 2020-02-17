@@ -13,4 +13,4 @@ function isPalindrome(someStr) {
     return true;
 }
 
-console.log(isPalindrome(''))
+console.log(isPalindrome('tacocat'))

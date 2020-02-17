@@ -29,7 +29,7 @@ function run(n){
   console.log(`2nd Alg Result: ${fib2(n)}`)
   getPerformance(fib2,n)
 }
-run(5)
+run(3)
 run(20)
 
 /*
