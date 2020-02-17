@@ -21,10 +21,14 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
-  if(shape==='Square') return createSquare(height,character);
-  else if(shape==='Triangle') return createTriangle(height,character);
-  else if(shape==='Diamond') return createDiamond(height,character);
-  else return 'please input either Square, Triangle, Diamond';
+  let stringifyShape;
+  switch(shape){
+    case('Square'): stringifyShape = createSquare(height,character); break;
+    case('Triangle'): stringifyShape = createTriangle(height,character); break;
+    case('Diamond'): stringifyShape = createDiamond(height,character); break;
+    default: 'please input either Square, Triangle, Diamond'; break;
+  }
+  return stringifyShape;
 };
 
 const createSquare = (height,character) => {
@@ -81,6 +85,6 @@ const createDiamond = (height,character) => {
   }
   return result.substring(0,result.lastIndexOf(`\n`));
 };
-console.log(printShape('Square',5,'*'))
-console.log(printShape('Triangle',3,'X'))
-console.log(printShape('Diamond',7,'$'))
+console.log(printShape('Square',5,'*'));
+console.log(printShape('Triangle',3,'X'));
+console.log(printShape('Diamond',7,'$'));
